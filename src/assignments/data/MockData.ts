@@ -18,9 +18,9 @@ export const makeWeeks = () => {
         students: `${faker.name.firstName()} ${faker.name.lastName()}`,
         courses: '',
     }
-    for (let i = 1; i < 54; i++) {
-        weeks[formatWeekNumber(i)] = faker.random.number(100)
-    }
+    range(54).forEach((_, index) => {
+        weeks[formatWeekNumber(index)] = faker.random.number(100)
+    })
     return weeks
 }
 
@@ -30,25 +30,24 @@ const makeSubRows = () => {
         lastName: '',
         courses: faker.company.companyName(0),
     }
+    range(54).forEach((_, index) => {
+        weeks[formatWeekNumber(index)] = ' '
+    })
 
-    for (let i = 1; i < 54; i++) {
-        weeks[formatWeekNumber(i)] = ' '
-    }
     return weeks
 }
 
 export function makeColumns() {
-    const columns = []
-    for (let i = 1; i < 54; i++) {
+    const columns: Array<object> = []
+    range(54).forEach((_, index) => {
         const column = {
-            Header: formatWeekNumber(i),
-            accessor: formatWeekNumber(i),
+            Header: formatWeekNumber(index),
+            accessor: formatWeekNumber(index),
             width: ASSIGNMENT_COLUMN_WIDTH,
             Cell: EditableCapacityCell,
         }
         columns.push(column)
-    }
-
+    })
     return columns
 }
 
