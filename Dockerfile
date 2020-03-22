@@ -1,0 +1,19 @@
+# Build stage
+FROM node:alpine as build
+
+WORKDIR /app
+
+COPY . /app
+
+ENV PATH /app/node_modules/.bin:$PATH
+
+RUN yarn
+
+RUN yarn build
+
+# Publish from built folder
+FROM nginx
+
+COPY --from=build /app/build /usr/share/nginx/html
+
+EXPOSE 80

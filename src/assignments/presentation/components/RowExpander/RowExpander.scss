@@ -1,0 +1,10 @@
+.RowExpander {
+    display: flex;
+    justify-content: space-between;
+    display: inline-block;
+    box-sizing: border-box;
+    width: 250px;
+    position: sticky;
+    z-index: 20;
+    left: 0px;
+}

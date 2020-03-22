@@ -1,0 +1,43 @@
+.NavBar {
+    .Toolbar {
+        display: flex;
+        justify-content: space-between;
+        .screen-links {
+            display: flex;
+            .appname {
+                align-self: center;
+            }
+            .MuiTypography-h1 {
+                margin-right: 32px;
+                font-size: 15px;
+                color: black;
+                align-self: center;
+            }
+            .MuiButton-root {
+                margin-right: 16px;
+                .MuiButton-label {
+                    font-size: 12px;
+                    text-transform: capitalize;
+                }
+            }
+        }
+        .avatar {
+            display: flex;
+            .MuiTypography-body2 {
+                align-self: center;
+                margin-right: 10px;
+            }
+            img {
+                border-radius: 50%;
+                width: 30px;
+                height: 30px;
+                border: 1px solid grey;
+                padding: 5px;
+            }
+        }
+        a {
+            text-decoration: none;
+            align-self: center;
+        }
+    }
+}
